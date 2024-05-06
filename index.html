@@ -5,9 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Library</title>
     <link rel="stylesheet" href="style.css">
-    <script> src="script.js"</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <header class="header">
+        <h1>Personal Library</h1>
+    </header>
+    <div class="button-bar">
+        <button id="addBook">Add Book</button>
+    </div>
+    <div id="book-cards">
+
+    </div>
+
+<dialog id="favDialog">
+    <form method="dialog">
+        <div id="formContainer">
+            <label for="favAnimal">Book Title</label>
+            <input id="favAnimal" type="text" name="favAnimal">
+            <label for="bookAuthor">Book Author</label>
+            <input id="bookAuthor" type="text" name="bookAuthor">
+            <label for="releaseDate">Release Date</label>
+            <select id="releaseDate" name="releaseDate"></select>
+        
+          <div>
+            <button id="cancel" type="reset">Cancel</button>
+            <button type="submit">Confirm</button>
+          </div>
+        </form>
+<!--         <button id="updateDetails">Update details</button>
+ -->    </div>
 </body>
 </html>

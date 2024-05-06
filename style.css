@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #222831;
+    font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+    color: #EEEEEE ;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.button-bar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border-radius: 10px;
+    border: 0px solid transparent;
+    font-size: 25px;
+    box-shadow: 0px 0px 0px transparent;
+    background-color:#EEEEEE;
+    margin: 10px;
+}
+
+#book-cards {
+    color: #EEEEEE; 
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 10px;
+}
+
+.button-delete {
+    font-size: 12px;
+}
+
+#formContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+dialog {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
