@@ -12,10 +12,11 @@
 </head>
 <body>
     <header class="header">
-        <h1>Personal Library</h1>
+        <h1>My Personal Library</h1>
     </header>
     <div class="button-bar">
         <button id="addBook">Add Book</button>
+        <!-- <button id="addBookDEBUG">Add Book DEBUG</button> -->
     </div>
     <div id="book-cards">
 
@@ -24,8 +25,8 @@
 <dialog id="favDialog">
     <form method="dialog">
         <div id="formContainer">
-            <label for="favAnimal">Book Title</label>
-            <input id="favAnimal" type="text" name="favAnimal">
+            <label for="bookTitle">Book Title</label>
+            <input id="bookTitle" type="text" name="bookTitle">
             <label for="bookAuthor">Book Author</label>
             <input id="bookAuthor" type="text" name="bookAuthor">
             <label for="releaseDate">Release Date</label>
@@ -33,7 +34,7 @@
         
           <div>
             <button id="cancel" type="reset">Cancel</button>
-            <button type="submit">Confirm</button>
+            <button id="submitButton" type="submit">Submit</button>
           </div>
         </form>
 <!--         <button id="updateDetails">Update details</button>

@@ -12,6 +12,8 @@ h1 {
 }
 
 header {
+    border-bottom: 1px solid wheat;
+    margin: 15px;
     display: flex;
     justify-content: center;
 }
@@ -36,11 +38,7 @@ button {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(5, 1fr);
-    margin-top: 10px;
-}
-
-.button-delete {
-    font-size: 12px;
+    margin: 20px;
 }
 
 #formContainer {
@@ -52,4 +50,16 @@ dialog {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.bookContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}   
+
+.removeButton {
+    max-width: 110px;
+    font-size: larger;
+    background-color: salmon;
 }
