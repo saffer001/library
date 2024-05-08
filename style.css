@@ -3,12 +3,13 @@
 }
 
 body {
-    background-color: #222831;
+    background-color: #383838;
     font-family: "Open Sans", sans-serif;
 }
 
 h1 {
-    color: #EEEEEE ;
+    color: #aeaeae;
+    margin-bottom: 10px;
 }
 
 header {
@@ -25,12 +26,20 @@ header {
 }
 
 button {
-    border-radius: 10px;
+    font-size: medium;
+    font-weight: 600;
+    border-radius: 5px;
     border: 0px solid transparent;
-    font-size: 25px;
     box-shadow: 0px 0px 0px transparent;
     background-color:#EEEEEE;
-    margin: 10px;
+    border: 1px solid black;
+}
+
+#addBook {
+    background-color: goldenrod;
+    font-size: larger;
+    height: 40px;
+    width: 130px;
 }
 
 #book-cards {
@@ -47,19 +56,49 @@ button {
 }
 
 dialog {
+    width: 500px;
+    font-size: medium;
+    font-weight: 500;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #aeaeae;
+    border-radius: 10px;
 }
 
 .bookContainer {
+    font-weight: 400;
+    color: #383838;
+    padding: 5px;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #aeaeae;
+    border-radius: 5px;
+    gap: 10px;
 }   
 
 .removeButton {
-    max-width: 110px;
-    font-size: larger;
+    background-color: crimson;
+}
+
+.readStatusTrue {
+    background-color: seagreen;
+}
+
+.readStatusFalse {
     background-color: salmon;
+}
+
+#cancelButton  {
+    background-color: crimson;
+}
+#submitButton {
+    background-color: seagreen;
+}
+
+.formButtons {
+    display: flex;
+    justify-content: space-around;
 }

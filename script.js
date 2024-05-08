@@ -23,17 +23,19 @@ const inputBookTitle = document.getElementById("bookTitle");
 const inputBookAuthor = document.getElementById("bookAuthor");
 //buttons
 const submitButton = document.getElementById("submitButton");
-const cancelButton = document.getElementById("cancel");
+const cancelButton = document.getElementById("cancelButton");
 const updateButton = document.getElementById("updateDetails");
 const addBookButton = document.getElementById("addBook");
+const isReadCheckbox = document.getElementById("isRead");
+let currentYear = new Date().getFullYear();
 
 //populate with a few static items
-addNewBook("The Three Body Problem", "Cixin Liu", 2008);
-addNewBook("The Fellowship of the Ring", "J. R. R. Tolkien", 1954);
-addNewBook("Moby Dick", "Herman Melville", 1851);
+addNewBook("The Three Body Problem", "Cixin Liu", 2008, false);
+addNewBook("The Fellowship of the Ring", "J. R. R. Tolkien", 1954, "on");
+addNewBook("Moby Dick", "Herman Melville", 1851, false);
 
 //populating release date selector
-for (let index = 2000; index >= 1000; index--) {
+for (let index = currentYear; index >= 1000; index--) {
   const optionReleaseDate = document.createElement('option');
   optionReleaseDate.value = index;
   optionReleaseDate.textContent = index;
@@ -51,11 +53,8 @@ for (let index = 2000; index >= 1000; index--) {
     dialog.close();
   });
 
-submitButton.addEventListener("click", () => {
-  addNewBook(inputBookTitle.value, inputBookAuthor.value, selectReleaseDate.value);
-});
 
-function addNewBook(title, author, date) {
+function addNewBook(title, author, date, isRead) {
   let addNewBook = new Book(title, author, date);
   arrayBooks.push(addNewBook);
 
@@ -66,6 +65,23 @@ function addNewBook(title, author, date) {
   newBookDiv.innerHTML = `Title: ${addNewBook.title}<br>Author: ${addNewBook.author}<br>Release date: ${addNewBook.releaseDate}`;
   newBookDiv.className = "newBookDiv";
 
+  const isReadStatus = document.createElement("button");
+  if (isRead == true) {
+    isReadStatus.textContent = "Has been read.";
+    isReadStatus.className = "readStatusTrue button";
+  } else {
+    isReadStatus.textContent = "Has not been read."
+    isReadStatus.className = "readStatusFalse button";
+  }
+  isReadStatus.addEventListener("click", () => {
+    if (isReadStatus.textContent == "Has been read.") {
+      isReadStatus.textContent = "Has not been read.";
+      isReadStatus.className = "readStatusFalse";
+    } else {
+      isReadStatus.textContent = "Has been read.";
+      isReadStatus.className = "readStatusTrue";
+    };
+  });
   const removeButton = document.createElement("button");
   removeButton.className = "removeButton";
   removeButton.textContent = "Remove";
@@ -73,8 +89,23 @@ function addNewBook(title, author, date) {
     cardContainer.removeChild(bookContainer);
   };
   bookContainer.appendChild(newBookDiv);
+  bookContainer.appendChild(isReadStatus);
   bookContainer.appendChild(removeButton);
   cardContainer.appendChild(bookContainer);  
 
 };
+
+submitButton.addEventListener("click", () => {
+  if (inputBookTitle.value.trim() === "" || inputBookAuthor.value.trim() === "") {
+    alert("The book must have a title and an author!");
+    if (inputBookAuthor.value.trim() === "") {
+      inputBookAuthor.focus();
+    } else {
+      inputBookTitle.focus();
+    }
+  return;
+  }
+addNewBook(inputBookTitle.value, inputBookAuthor.value, selectReleaseDate.value, isReadCheckbox.checked);
+dialog.close();
+});
 

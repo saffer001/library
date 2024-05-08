@@ -23,18 +23,24 @@
     </div>
 
 <dialog id="favDialog">
-    <form method="dialog">
+    <form method="dialog" name="bookAddForm" onsubmit="return validateInput()">
         <div id="formContainer">
             <label for="bookTitle">Book Title</label>
             <input id="bookTitle" type="text" name="bookTitle">
             <label for="bookAuthor">Book Author</label>
             <input id="bookAuthor" type="text" name="bookAuthor">
-            <label for="releaseDate">Release Date</label>
-            <select id="releaseDate" name="releaseDate"></select>
+            <div class="bookReleaseDateContainer">
+                <label for="releaseDate">Release Date</label>
+                <select id="releaseDate" name="releaseDate"></select>
+            </div>
+            <div class = bookIsReadCheckbox>
+                <label for="isRead">Is read?</label>
+                <input type="checkbox" id="isRead" name="isRead">
+            </div>
         
-          <div>
-            <button id="cancel" type="reset">Cancel</button>
-            <button id="submitButton" type="submit">Submit</button>
+          <div class="formButtons">
+            <button id="cancelButton" type="reset">Cancel</button>
+            <button id="submitButton" type="button">Submit</button>
           </div>
         </form>
 <!--         <button id="updateDetails">Update details</button>
